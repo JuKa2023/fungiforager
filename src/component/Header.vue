@@ -1,42 +1,42 @@
 <template>
-  <header class="bg-gray-900 text-white">
+  <header class="text-[#AA0000]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between h-16 items-center">
 
         <img class="text-xl font-bold" src="" alt="Logo" />
           <router-link to="/"></router-link>
-      </img>
+        </img>
 
         <!-- Desktop Navigation -->
         <nav class="hidden md:flex space-x-6">
           <router-link
             to="/"
-            class="hover:text-yellow-300"
-            :class="{ 'text-yellow-300 font-semibold': $route.name === 'landing' }"
+            class="hover:underline"
+            :class="{ 'invisible': $route.name === 'landing' }"
           >Home</router-link>
 
           <router-link
             to="/hinweis"
-            class="hover:text-yellow-300"
-            :class="{ 'text-yellow-300 font-semibold': $route.name === 'hinweis' }"
+            class="hover:underline"
+            :class="{ 'hidden': $route.name === 'hinweis' }"
           >Hinweis</router-link>
 
           <router-link
             to="/lexikon"
-            class="hover:text-yellow-300"
-            :class="{ 'text-yellow-300 font-semibold': $route.name === 'lexikon' }"
+            class="hover:underline"
+            :class="{ 'hideen': $route.name === 'lexikon' }"
           >Lexikon</router-link>
 
           <router-link
             to="/spielinformation"
-            class="hover:text-yellow-300"
-            :class="{ 'text-yellow-300 font-semibold': $route.name === 'spielinformation' }"
+            class="hover:underline"
+            :class="{ 'hidden': $route.name === 'spielinformation' }"
           >Spielinformation</router-link>
 
           <router-link
             to="/ueberuns"
-            class="hover:text-yellow-300"
-            :class="{ 'text-yellow-300 font-semibold': $route.name === 'ueberuns' }"
+            class="hover:underline"
+            :class="{ 'hidden': $route.name === 'ueberuns' }"
           >Über Uns</router-link>
         </nav>
 
@@ -94,6 +94,5 @@
 <script setup>
 import { ref } from 'vue'
 import { useRoute } from 'vue-router'
-import icon from "@/assets/icons/funigforager_icon.png"
 const mobileOpen = ref(false)
 </script>

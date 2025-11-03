@@ -1,0 +1,98 @@
+<template>
+    <section :aria-labelledby="headingId" class="w-full">
+      <!-- Optional heading -->
+      <header v-if="title" class="mb-8">
+        <h2 :id="headingId" class="text-3xl font-bold">{{ title }}</h2>
+      </header>
+  
+      <div v-if="sortedArticles.length === 0" class="text-gray-500 italic">
+        Keine Neuigkeiten vorhanden.
+      </div>
+  
+      <ul v-else role="list" class="space-y-8">
+        <li
+          v-for="(a, idx) in sortedArticles"
+          :key="a.id || idx"
+          class="pt-8"
+          :class="{ 'border-t border-gray-300': idx !== 0 }"
+        >
+          <div class="grid grid-cols-1 md:grid-cols-12 md:gap-8">
+            <!-- Date -->
+            <time
+              class="md:col-span-3 text-xl md:text-2xl font-medium tracking-wide"
+              :datetime="isoDate(a.date)"
+              >{{ formatMonthYear(a.date) }}</time
+            >
+  
+            <!-- Content -->
+            <div class="md:col-span-9 space-y-3">
+              <h3 class="text-2xl font-semibold leading-snug">
+                {{ a.title }}
+              </h3>
+  
+              <p v-if="a.body" class="text-lg leading-relaxed text-gray-800">
+                {{ a.body }}
+              </p>
+  
+              <!-- Optional list of bullets -->
+              <ul v-if="a.points?.length" class="list-disc pl-6 text-gray-800">
+                <li v-for="(p, i) in a.points" :key="i">{{ p }}</li>
+              </ul>
+  
+              <!-- Optional link -->
+              <div v-if="a.link" class="pt-1">
+                <a
+                  :href="a.link.href"
+                  class="underline hover:no-underline font-medium"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  {{ a.link.label || 'Mehr erfahren' }}
+                </a>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </template>
+  
+  <script setup>
+  import { computed } from 'vue'
+  
+  /**
+   * Props
+   * - articles: [{ id?, date: string|Date, title: string, body?: string, points?: string[], link?: { href, label? } }]
+   * - title: optional heading for the section
+   * - newestFirst: boolean (default true)
+   */
+  const props = defineProps({
+    articles: { type: Array, default: () => [] },
+    title: { type: String, default: '' },
+    newestFirst: { type: Boolean, default: true },
+  })
+  
+  const headingId = `news-heading-${Math.random().toString(36).slice(2, 8)}`
+  
+  const sortedArticles = computed(() => {
+    const arr = [...props.articles]
+    arr.sort((a, b) => new Date(a.date) - new Date(b.date))
+    return props.newestFirst ? arr.reverse() : arr
+  })
+  
+  function isoDate(d) {
+    return new Date(d).toISOString().slice(0, 10)
+  }
+  
+  function formatMonthYear(d) {
+    const dt = new Date(d)
+    return new Intl.DateTimeFormat('de-DE', {
+      month: 'long',
+      year: 'numeric',
+    }).format(dt)
+  }
+  </script>
+  
+  <style scoped>
+  /* no background styles on purpose */
+  </style>
