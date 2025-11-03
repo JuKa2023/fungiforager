@@ -2,7 +2,7 @@
     <button
       @click="$emit('click')"
       :class="[
-        'rounded-xl transition-all duration-200 px-6 py-3 text-2xl',
+        'rounded-xl transition-all duration-200 px-6 py-3',
         classes
       ]"
     >

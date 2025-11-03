@@ -19,18 +19,18 @@
           <div class="grid grid-cols-1 md:grid-cols-12 md:gap-8">
             <!-- Date -->
             <time
-              class="md:col-span-3 text-xl md:text-2xl font-medium tracking-wide"
+              class="md:col-span-3 text-xl font-medium tracking-wide font-architect"
               :datetime="isoDate(a.date)"
               >{{ formatMonthYear(a.date) }}</time
             >
   
             <!-- Content -->
             <div class="md:col-span-9 space-y-3">
-              <h3 class="text-2xl font-semibold leading-snug">
+              <p class="font-semibold leading-snug">
                 {{ a.title }}
-              </h3>
+              </p>
   
-              <p v-if="a.body" class="text-lg leading-relaxed text-gray-800">
+              <p v-if="a.body" class="leading-relaxed text-gray-800">
                 {{ a.body }}
               </p>
   

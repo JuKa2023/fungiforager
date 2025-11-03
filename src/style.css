@@ -5,12 +5,39 @@
   --font-montserrat: 'Montserrat', sans-serif;
 }
 
-/* Apply Architects Daughter only to headings */
-h1, h2, h3, h4, h5, h6 {
-    @apply font-architect;
-  }
-  
-  /* Set Montserrat as default for everything else */
-  body {
-    @apply font-montserrat;
-  }
+/* Fonts */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-architect;
+}
+body {
+  @apply font-montserrat;
+}
+
+/* Headings & text */
+h1 {
+  /* ~40px on mobile, ~48px on small screens, ~64px on large */
+  @apply text-4xl sm:text-5xl lg:text-6xl leading-tight tracking-tight;
+}
+
+h2 {
+  /* exact 32px at sm and up, slightly smaller on mobile */
+  @apply leading-snug;
+  @apply text-[28px] sm:text-[32px];
+}
+
+p {
+  /* ~18px on mobile, 20px on md, exact 22px on lg+ */
+  @apply leading-relaxed;
+  @apply text-[18px] md:text-[20px] lg:text-[22px];
+}
+
+/* Parallax main gradient that scrolls over the hero image */
+.parallax-main {
+  /* Top should be fully transparent light gray, bottom deep forest green */
+  background: linear-gradient(to top, #031600 10%, rgba(217, 217, 217, 0) 100%);
+}
