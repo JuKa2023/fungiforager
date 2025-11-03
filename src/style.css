@@ -1,1 +1,16 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+
+@theme {
+  --font-architect: 'Architects Daughter', cursive;
+  --font-montserrat: 'Montserrat', sans-serif;
+}
+
+/* Apply Architects Daughter only to headings */
+h1, h2, h3, h4, h5, h6 {
+    @apply font-architect;
+  }
+  
+  /* Set Montserrat as default for everything else */
+  body {
+    @apply font-montserrat;
+  }
