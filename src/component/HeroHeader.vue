@@ -1,9 +1,22 @@
 <template>
-  <header ref="heroEl" :class="headerClass" :style="headerStyle">
-    <!-- Overlay -->
-    <div class="absolute inset-0 bg-black/40"></div>
+  <header
+    :class="headerClass"
+    :style="headerStyle"
+  >
+    <!-- Background image that scales -->
+    <div
+      class="absolute inset-0"
+      :class="bgClass"
+      :style="bgImageStyle"
+    ></div>
 
-    <!-- Title -->
+    <!-- Dark overlay that gets darker on scroll -->
+    <div
+      class="absolute inset-0"
+      :style="overlayStyle"
+    ></div>
+
+    <!-- Content (H1 + P that move + fade with scroll) -->
     <div class="relative text-center px-4" :style="titleStyle">
       <h1 class="text-3xl md:text-5xl font-bold text-white">
         {{ title }}
@@ -18,101 +31,141 @@
 
 <script setup>
 import { computed, ref, onMounted, onBeforeUnmount } from 'vue'
+
 const props = defineProps({
   title: { type: String, required: true },
   subtitle: { type: String, default: '' },
   image: { type: String, required: true },
+
+  // Layout
   fullScreen: { type: Boolean, default: false },
-  sticky: { type: Boolean, default: true },
-  parallax: { type: Boolean, default: true },
-  collapseOffset: { type: Number, default: 60 },
-  collapseDelayMs: { type: Number, default: 200 },
-  collapseOnScroll: { type: Boolean, default: false },
-  shrinkOnScroll: { type: Boolean, default: true },
-  minHeightPx: { type: Number, default: 160 },
-  titleShiftPx: { type: Number, default: 140 },
+  minHeightPx: { type: Number, default: 320 },
+  sticky: { type: Boolean, default: false },
+  parallax: { type: Boolean, default: false },
+
+  // Scroll effects for background + overlay
+  enableScrollEffects: { type: Boolean, default: true },
+  maxScale: { type: Number, default: 1.1 },               // max 10% zoom
+
+  baseOverlayOpacity: { type: Number, default: 0.4 },     // starting darkness
+  maxExtraOverlayOpacity: { type: Number, default: 0.4 }, // extra darkness
+
+  // Scroll effects for text movement
+  scrollText: { type: Boolean, default: true },           // move H1 + P
+  textScrollFactor: { type: Number, default: 0.3 },       // speed of text movement
+  maxTextShiftPx: { type: Number, default: 120 },         // clamp movement
+
+  // NEW: text fading
+  fadeTextOnScroll: { type: Boolean, default: true },     // fade text out while scrolling
+  textFadeStrength: { type: Number, default: 1 },         // 1 = fully gone at scrollProgress=1
 })
 
-const backgroundStyle = computed(() => ({ backgroundImage: `url('${props.image}')` }))
+const scrollProgress = ref(0) // 0–1 based on scroll (for bg & overlay)
+const titleOffset = ref(0)    // px offset for H1 + P
 
-const collapsed = ref(false)
-let collapseTimer
-const heroEl = ref(null)
-const baseHeight = ref(0)
-const currentHeight = ref(0)
-const shrinkProgress = ref(0)
-const atMin = ref(false)
+function handleScroll() {
+  const y = window.scrollY || 0
+  const refDistance = window.innerHeight || 1
+  const progress = Math.min(y / refDistance, 1)
 
-function onScroll() {
-  if (window.scrollY > props.collapseOffset && !collapsed.value) {
-    window.clearTimeout(collapseTimer)
-    collapseTimer = window.setTimeout(() => {
-      collapsed.value = true
-    }, props.collapseDelayMs)
-  } else if (window.scrollY <= props.collapseOffset && collapsed.value) {
-    window.clearTimeout(collapseTimer)
-    collapsed.value = false
+  if (props.enableScrollEffects) {
+    scrollProgress.value = progress
+  }
+
+  if (props.scrollText) {
+    const shift = Math.min(y * props.textScrollFactor, props.maxTextShiftPx)
+    titleOffset.value = shift
   }
 }
 
 onMounted(() => {
-  // measure initial height for shrink calculations
-  const measured = heroEl.value ? heroEl.value.offsetHeight : 0
-  baseHeight.value = measured || (props.fullScreen ? window.innerHeight : 320)
-  currentHeight.value = baseHeight.value
-  if (props.collapseOnScroll) window.addEventListener('scroll', onScroll, { passive: true })
-  if (props.shrinkOnScroll) window.addEventListener('scroll', onShrinkScroll, { passive: true })
+  if (props.enableScrollEffects || props.scrollText || props.fadeTextOnScroll) {
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    handleScroll() // initialize once based on current scroll position
+  }
 })
 
 onBeforeUnmount(() => {
-  if (props.collapseOnScroll) {
-    window.removeEventListener('scroll', onScroll)
-    window.clearTimeout(collapseTimer)
+  if (props.enableScrollEffects || props.scrollText || props.fadeTextOnScroll) {
+    window.removeEventListener('scroll', handleScroll)
   }
-  if (props.shrinkOnScroll) window.removeEventListener('scroll', onShrinkScroll)
 })
 
-function onShrinkScroll() {
-  const minH = props.minHeightPx
-  const maxH = baseHeight.value
-  const range = Math.max(1, maxH - minH)
-  const delta = Math.min(window.scrollY, range)
-  shrinkProgress.value = delta / range
-  currentHeight.value = Math.max(minH, maxH - delta)
-  atMin.value = currentHeight.value <= minH + 0.5
-}
+// --- Classes & styles ---
 
 const headerClass = computed(() => [
   'w-full',
-  'bg-center bg-cover',
-  props.parallax ? 'bg-fixed' : '',
-  props.sticky && !atMin.value ? 'sticky top-0' : '',
-  'flex items-center justify-start relative select-none z-0',
-  'hero-sticky',
-  props.collapseOnScroll && collapsed.value ? 'hero-collapsed' : '',
+  'relative',
+  'overflow-hidden',               // so scaled bg doesn’t overflow
+  'flex items-center justify-center',
+  'select-none',
+  props.sticky ? 'sticky top-0' : '',
 ])
 
 const headerStyle = computed(() => ({
-  ...backgroundStyle.value,
-  height: `${currentHeight.value || (props.fullScreen ? window.innerHeight : 320)}px`,
+  height: props.fullScreen ? '100vh' : `${props.minHeightPx}px`,
 }))
 
-const titleStyle = computed(() => ({
-  transform: `translateY(-${shrinkProgress.value * props.titleShiftPx}px)`,
-}))
+const bgClass = computed(() => (props.parallax ? 'bg-fixed' : ''))
+
+// Background image scales with scroll
+const bgImageStyle = computed(() => {
+  const scale = props.enableScrollEffects
+    ? 1 + (props.maxScale - 1) * scrollProgress.value
+    : 1
+
+  return {
+    backgroundImage: `url('${props.image}')`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    transform: `scale(${scale})`,
+    transition: 'transform 80ms linear',
+    willChange: 'transform',
+  }
+})
+
+// Overlay becomes darker with scroll
+const overlayStyle = computed(() => {
+  if (!props.enableScrollEffects) {
+    return {
+      backgroundColor: `rgba(0, 0, 0, ${props.baseOverlayOpacity})`,
+      pointerEvents: 'none',
+    }
+  }
+
+  const extra = props.maxExtraOverlayOpacity * scrollProgress.value
+  const opacity = Math.min(props.baseOverlayOpacity + extra, 1)
+
+  return {
+    backgroundColor: `rgba(0, 0, 0, ${opacity})`,
+    transition: 'background-color 80ms linear',
+    pointerEvents: 'none',
+  }
+})
+
+// Text (H1 + P) moves + fades with scroll
+const titleStyle = computed(() => {
+  const style = {}
+
+  // Movement
+  if (props.scrollText) {
+    style.transform = `translateY(-${titleOffset.value}px)`
+    style.willChange = 'transform, opacity'
+  }
+
+  // Fading
+  if (props.fadeTextOnScroll) {
+    const fadeProgress = scrollProgress.value // 0 → 1
+    const opacity = Math.max(1 - fadeProgress * props.textFadeStrength, 0)
+    style.opacity = opacity
+  }
+
+  return style
+})
 </script>
 
 <style scoped>
-.hero-sticky {
-  transition:
-    height 400ms ease,
-    transform 400ms ease,
-    opacity 300ms ease;
-  will-change: height, transform, opacity;
-}
-.hero-collapsed {
-  transform: translateY(-14px);
-  opacity: 0.85;
-  overflow: hidden;
+header {
+  transition: opacity 200ms ease;
 }
 </style>

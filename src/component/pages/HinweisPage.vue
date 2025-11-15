@@ -1,11 +1,15 @@
 <!-- src/component/layout/BasePage.vue -->
 <template>
-  <main class="min-h-screen parallax-main text-white">
-    <div class="mx-auto max-w-4xl px-6 py-12 md:py-16">
-      <!-- Page title -->
-      <h1 class="text-center text-3xl md:text-5xl font-semibold tracking-wide mb-12 md:mb-16">
-        Hinweis
-      </h1>
+
+
+  <main class="min-h-screen bg-[#031600] text-white">
+    <header class="h-24 pt-40">
+      <div class="relative text-center px-4" :style="titleStyle">
+        <h1 class="text-3xl md:text-5xl font-bold text-white">Hinweis
+        </h1>
+      </div>
+    </header>
+    <div class="mx-auto max-w-4xl px-6 py-12 md:py-16 mt-10">
 
       <!-- Intro lead -->
       <p class="mx-auto max-w-prose text-white leading-relaxed mb-10">
@@ -15,7 +19,7 @@
       </p>
 
       <!-- Sections -->
-      <ul class="space-y-10 md:space-y-12">
+      <ul class="space-y-10 md:space-y-12 mt-40">
         <li v-for="(s, i) in sections" :key="i" class="space-y-2">
           <h2 class="text-xl md:text-2xl font-semibold text-white">
             {{ s.title }}
@@ -36,6 +40,9 @@
 </template>
 
 <script setup lang="ts">
+import heroImage from '../../assets/hintergrundbild/platzhalter_wald.jpeg'
+import HeroHeader from '../HeroHeader.vue'
+
 type Section = {
   title: string
   body: string

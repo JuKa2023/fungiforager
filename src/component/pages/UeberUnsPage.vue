@@ -1,13 +1,22 @@
 <template>
   <HeroHeader
-    title="Willkommen im Wald der Pilze"
+    title="Wer wir sind"
     :image="heroImage"
     :fullScreen="true"
     :sticky="true"
-    :parallax="true"
+    :parallax="false"
+    :enableScrollEffects="true"
+    :maxScale="1.2"
+    :baseOverlayOpacity="0.35"
+    :maxExtraOverlayOpacity="0.55"
+    :scrollText="true"
+    :textScrollFactor="0.4"
+    :maxTextShiftPx="150"
+    :fadeTextOnScroll="true"
+    :textFadeStrength="1.2"
   />
-  <main class="parallax-main relative z-10 pt-10 sm:pt-16">
-    <section class="mx-auto max-w-5xl px-6 py-12 md:py-16 space-y-14 md:space-y-20">
+  <main class="relative z-10">
+    <section class="relative pt-[120px] sm:pt-[180px] mx-auto max-w-5xl px-6 py-12 md:py-16 space-y-14 md:space-y-20">
       <!-- Wer wir sind -->
       <div class="space-y-4">
         <h2 class="text-2xl md:text-3xl font-semibold text-white">Wer wir sind</h2>
@@ -52,7 +61,7 @@
 
             <!-- card -->
             <article
-              class="bg-amber-200/90 text-emerald-950 rounded-s shadow-xl p-6 pl-28 md:pl-32 min-h-[9.5rem] flex flex-col justify-center"
+              class="bg-amber-200/90 text-emerald-950 rounded-s shadow-xl p-6 pl-28 md:pl-32 min-h-38 flex flex-col justify-center"
             >
               <h3 class="text-lg md:text-xl font-semibold">{{ member.name }}</h3>
               <ul class="mt-2 space-y-1 text-sm md:text-base">

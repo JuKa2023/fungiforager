@@ -36,10 +36,12 @@ p {
   @apply text-[18px] md:text-[20px] lg:text-[22px];
 }
 
-/* Parallax main gradient that scrolls over the hero image */
 .parallax-main {
-  /* Top should be fully transparent light gray, bottom deep forest green */
-  background: linear-gradient(to top, #031600 95%, rgba(217, 217, 217, 0) 100%);
+  background: linear-gradient(
+  to top,
+  rgba(3, 22, 0, 0) 30%,   /* transparent */
+  rgba(5, 38, 0, 1) 100%   /* opaque */
+);
 }
 
 @layer components {

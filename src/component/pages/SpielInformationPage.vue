@@ -7,7 +7,7 @@
     :sticky="true"
     :parallax="true"
   />
-  <main class="parallax-main relative z-10 pt-10 sm:pt-16">
+  <main class="parallax-mainrelative z-10 pt-10 sm:pt-16">
     <section>
       <p class="text-m mb-6 text-white">
         In Fungi Forager erkundest du eine 3D-Waldwelt, inspiriert von echten Schweizer
@@ -110,7 +110,7 @@
   </main>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import HeroHeader from '../HeroHeader.vue'
 import heroImage from '../../assets/hintergrundbild/platzhalter_wald.jpeg'
 </script>

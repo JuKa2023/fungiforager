@@ -1,6 +1,6 @@
 <!-- src/component/layout/BasePage.vue -->
 <template>
-  <main class="min-h-screen bg-white">
+  <main class="parallax-main min-h-screen bg-white">
     <div class="max-w-5xl mx-auto px-4 py-10">
       <h1 v-if="title" class="text-3xl font-bold mb-6">{{ title }}</h1>
       <slot />
@@ -8,7 +8,7 @@
   </main>
 </template>
 
-<script setup>
+<script setup lang="ts">
 defineProps({
   title: { type: String, default: '' }
 })
