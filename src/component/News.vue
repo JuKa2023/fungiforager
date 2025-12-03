@@ -13,8 +13,9 @@
         <li
           v-for="(a, idx) in sortedArticles"
           :key="a.id || idx"
-          class="pt-8"
+          class="pt-8 news-item"
           :class="{ 'text-white border-t border-gray-300': idx !== 0 }"
+          :style="{ animationDelay: `${idx * 0.1}s` }"
         >
           <div class="grid grid-cols-1 md:grid-cols-12 md:gap-8">
             <!-- Date -->
@@ -58,7 +59,7 @@
   </template>
 
   <script setup lang="ts">
-  import { computed } from 'vue'
+  import { computed, onMounted } from 'vue'
 
   const props = defineProps({
     articles: { type: Array, default: () => [] },
@@ -85,8 +86,41 @@
       year: 'numeric',
     }).format(dt)
   }
+
+  // Intersection Observer to trigger animation when items come into view
+  onMounted(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible')
+            observer.unobserve(entry.target) // Stop observing once animated
+          }
+        })
+      },
+      {
+        threshold: 0.1, // Trigger when 10% of the item is visible
+        rootMargin: '0px 0px -50px 0px', // Trigger slightly before item enters viewport
+      }
+    )
+
+    // Observe all news items
+    const newsItems = document.querySelectorAll('.news-item')
+    newsItems.forEach((item) => observer.observe(item))
+  })
   </script>
 
   <style scoped>
-  /* no background styles on purpose */
+  /* News item animation - only triggers when in view */
+  .news-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .news-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
   </style>
+
