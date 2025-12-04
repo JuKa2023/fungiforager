@@ -65,7 +65,7 @@ onMounted(() => {
 .lexikon-page {
   background: linear-gradient(
     to bottom,
-    #1a4d2e 0%,
+    #031600 0%,
     #0d2818 50%,
     rgb(0, 0, 0) 100%
   );
