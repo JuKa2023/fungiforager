@@ -1,10 +1,5 @@
-<!-- src/component/pages/LexikonPage.vue -->
 <template>
-  <main class="parallax-main min-h-screen bg-[#2c3e50] relative overflow-hidden">
-    <!-- Background elements to give a forest vibe -->
-    <div class="absolute inset-0 opacity-10 pointer-events-none">
-      <div class="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/wood-pattern.png')]"></div>
-    </div>
+  <main class="lexikon-page min-h-screen relative overflow-hidden">
 
     <div class="max-w-7xl mx-auto px-4 py-10 relative z-10">
       <h1 v-if="title" class="text-4xl font-bold mb-8 text-[#ffffff] text-center font-serif tracking-widest">{{ title }}</h1>
@@ -65,3 +60,14 @@ onMounted(() => {
 })
 
 </script>
+
+<style scoped>
+.lexikon-page {
+  background: linear-gradient(
+    to bottom,
+    #1a4d2e 0%,
+    #0d2818 50%,
+    rgb(0, 0, 0) 100%
+  );
+}
+</style>

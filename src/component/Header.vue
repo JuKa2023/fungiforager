@@ -1,7 +1,7 @@
 <template>
   <header
     ref="headerRef"
-    class="text-[#AA0000] fixed top-0 left-0 right-0 z-50 w-full backdrop-blur-sm"
+    class="header-paper fixed top-0 left-0 right-0 z-50 w-full shadow-lg"
   >
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between h-16 items-center">
@@ -14,38 +14,38 @@
         <nav class="hidden md:flex space-x-10 text-lg">
           <router-link
             to="/"
-            class="hover:underline"
+            class="nav-link"
             :class="{ 'invisible': $route.name === 'landing' }"
           >Home</router-link>
 
           <router-link
             to="/hinweis"
-            class="hover:underline"
+            class="nav-link"
             :class="{ 'hidden': $route.name === 'hinweis' }"
           >Hinweis</router-link>
 
           <router-link
             to="/lexikon"
-            class="hover:underline"
+            class="nav-link"
             :class="{ 'hideen': $route.name === 'lexikon' }"
           >Lexikon</router-link>
 
           <router-link
             to="/spielinformation"
-            class="hover:underline"
+            class="nav-link"
             :class="{ 'hidden': $route.name === 'spielinformation' }"
           >Spielinformation</router-link>
 
           <router-link
             to="/ueberuns"
-            class="hover:underline"
+            class="nav-link"
             :class="{ 'hidden': $route.name === 'ueberuns' }"
           >Über Uns</router-link>
         </nav>
 
         <!-- Mobile Menu Button -->
         <button
-          class="md:hidden focus:outline-none"
+          class="md:hidden focus:outline-none p-2 rounded-full hover:bg-white/20 transition-colors"
           @click="mobileOpen = !mobileOpen"
         >
           <img
@@ -58,39 +58,38 @@
     </div>
 
     <!-- Mobile Menu -->
-    <div v-if="mobileOpen" class="md:hidden backdrop-blur-sm px-4 pb-4 space-y-2 text-right
-">
+    <div v-if="mobileOpen" class="md:hidden mobile-menu px-4 pb-4 space-y-2 text-right border-t border-white/20">
       <router-link
         to="/"
-        class="block py-2 hover:underline"
+        class="nav-link block py-2"
         :class="{'hidden': $route.name === 'landing' }"
         @click="mobileOpen=false"
       >Home</router-link>
 
       <router-link
         to="/hinweis"
-        class="block py-2 hover:underline"
+        class="nav-link block py-2"
         :class="{'hidden': $route.name === 'hinweis' }"
         @click="mobileOpen=false"
       >Hinweis</router-link>
 
       <router-link
         to="/lexikon"
-        class="block py-2 hover:underline"
+        class="nav-link block py-2"
         :class="{'hidden': $route.name === 'lexikon' }"
         @click="mobileOpen=false"
       >Lexikon</router-link>
 
       <router-link
         to="/spielinformation"
-        class="block py-2 hover:underline"
+        class="nav-link block py-2"
         :class="{'hidden': $route.name === 'spielinformation' }"
         @click="mobileOpen=false"
       >Spielinformation</router-link>
 
       <router-link
         to="/ueberuns"
-        class="block py-2 hover:underline"
+        class="nav-link block py-2"
         :class="{'hidden': $route.name === 'ueberuns' }"
         @click="mobileOpen=false"
       >Über Uns</router-link>
@@ -122,3 +121,30 @@ onBeforeUnmount(() => {
   document.removeEventListener('pointerdown', handleClickOutside)
 })
 </script>
+
+<style scoped>
+.header-paper {
+  background: rgba(255, 255, 255, 0.666);
+  backdrop-filter: blur(12px) brightness(1.4);
+  -webkit-backdrop-filter: blur(12px) brightness(1.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.794);
+}
+
+.mobile-menu {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px) brightness(1.2);
+  -webkit-backdrop-filter: blur(12px) brightness(1.2);
+}
+
+.nav-link {
+  color: #AA0000;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  color: #CC0000;
+  transform: translateY(-1px);
+}
+</style>
