@@ -3,53 +3,57 @@
     <div class="book relative flex w-full max-w-6xl aspect-[3/2] shadow-2xl rounded-sm overflow-hidden bg-[#E5BE7F]">
       <!-- Left Page -->
       <div class="page left-page flex-1 p-8 border-r border-[#9E8048] relative">
-        <div v-if="currentMushroomLeft" class="h-full flex flex-col">
-          <h2 class="text-4xl font-handwriting mb-4 text-gray-800">{{ currentMushroomLeft.name }}</h2>
+        <div v-if="currentMushroomLeft" class="h-full pb-8 overflow-y-auto pr-2 custom-scrollbar">
+          <h2 class="text-4xl font-handwriting mb-3 text-gray-800">{{ currentMushroomLeft.name }}</h2>
 
-          <div class="flex gap-6 mb-6">
-            <div class="w-1/2">
-              <div class="aspect-square bg-gray-200 rounded-lg overflow-hidden border-4 border-[#e8dcc5] shadow-inner">
-                <img
-                  v-if="currentMushroomLeft.image"
-                  :src="getImageUrl(currentMushroomLeft)"
-                  :alt="currentMushroomLeft.name"
-                  class="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-            <div class="w-1/2 font-serif text-gray-700">
-              <div v-if="currentMushroomLeft.latin_name" class="mb-2">
-                <span class="font-bold block text-sm uppercase tracking-wider text-gray-500">Latein</span>
-                <span class="italic">{{ currentMushroomLeft.latin_name }}</span>
-              </div>
-              <div v-if="currentMushroomLeft.description">
-                <span class="font-bold block text-sm uppercase tracking-wider text-gray-500 underline mb-1">Aussehen</span>
-                <p class="text-sm leading-relaxed">{{ currentMushroomLeft.description }}</p>
-              </div>
+          <!-- Floating Image -->
+          <div class="float-left w-[45%] mr-4 mb-3">
+            <div class="aspect-square bg-gray-200 rounded-lg overflow-hidden border-4 border-[#e8dcc5] shadow-inner">
+              <img
+                v-if="currentMushroomLeft.image"
+                :src="getImageUrl(currentMushroomLeft)"
+                :alt="currentMushroomLeft.name"
+                class="w-full h-full object-cover"
+              />
             </div>
           </div>
 
-          <div class="space-y-4 font-serif text-gray-700 text-sm overflow-y-auto pr-2 custom-scrollbar">
-            <div v-if="currentMushroomLeft.size">
-              <span class="font-bold block underline mb-1">Grösse</span>
+          <!-- Flowing Text Content -->
+          <div class="font-serif text-gray-700 text-sm">
+            <div v-if="currentMushroomLeft.latin_name" class="mb-3">
+              <span class="font-bold block text-sm uppercase tracking-wider text-gray-500">Latein</span>
+              <span class="italic">{{ currentMushroomLeft.latin_name }}</span>
+            </div>
+            
+            <div v-if="currentMushroomLeft.description" class="mb-3">
+              <span class="font-bold block text-sm uppercase tracking-wider text-gray-500 underline mb-1">Aussehen</span>
+              <p class="leading-relaxed">{{ currentMushroomLeft.description }}</p>
+            </div>
+
+            <div v-if="currentMushroomLeft.size" class="mb-3">
+              <span class="font-bold block underline mb-0.5">Grösse</span>
               <p>{{ currentMushroomLeft.size }}</p>
             </div>
-            <div v-if="currentMushroomLeft.location">
-              <span class="font-bold block underline mb-1">Standort</span>
+            
+            <div v-if="currentMushroomLeft.location" class="mb-3">
+              <span class="font-bold block underline mb-0.5">Standort</span>
               <p>{{ currentMushroomLeft.location }}</p>
             </div>
-            <div v-if="currentMushroomLeft.season">
-              <span class="font-bold block underline mb-1">Erscheinungszeit</span>
+            
+            <div v-if="currentMushroomLeft.season" class="mb-3">
+              <span class="font-bold block underline mb-0.5">Erscheinungszeit</span>
               <p>{{ currentMushroomLeft.season }}</p>
             </div>
-            <div v-if="currentMushroomLeft.edibility">
-              <span class="font-bold block underline mb-1">Speisewert</span>
+            
+            <div v-if="currentMushroomLeft.edibility" class="mb-3">
+              <span class="font-bold block underline mb-0.5">Speisewert</span>
               <p :class="{'text-green-700': isEdible(currentMushroomLeft), 'text-red-700': isPoisonous(currentMushroomLeft)}">
                 {{ currentMushroomLeft.edibility }}
               </p>
             </div>
-            <div v-if="currentMushroomLeft.confusion_risk">
-              <span class="font-bold block underline mb-1">Verwechslungsgefahr</span>
+            
+            <div v-if="currentMushroomLeft.confusion_risk" class="mb-3">
+              <span class="font-bold block underline mb-0.5">Verwechslungsgefahr</span>
               <p>{{ currentMushroomLeft.confusion_risk }}</p>
             </div>
           </div>
@@ -62,57 +66,62 @@
 
       <!-- Right Page -->
       <div class="page right-page flex-1 p-8 relative bg-[#E5BE7F]">
-        <div v-if="currentMushroomRight" class="h-full flex flex-col">
-          <h2 class="text-4xl font-handwriting mb-4 text-gray-800">{{ currentMushroomRight.name }}</h2>
+        <div v-if="currentMushroomRight" class="h-full pb-8 overflow-y-auto pr-2 custom-scrollbar">
+          <h2 class="text-4xl font-handwriting mb-3 text-gray-800">{{ currentMushroomRight.name }}</h2>
 
-          <div class="flex gap-6 mb-6">
-            <div class="w-1/2">
-              <div class="aspect-square bg-gray-200 rounded-lg overflow-hidden border-4 border-[#e8dcc5] shadow-inner">
-                <img
-                  v-if="currentMushroomRight.image"
-                  :src="getImageUrl(currentMushroomRight)"
-                  :alt="currentMushroomRight.name"
-                  class="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-            <div class="w-1/2 font-serif text-gray-700">
-              <div v-if="currentMushroomRight.latin_name" class="mb-2">
-                <span class="font-bold block text-sm uppercase tracking-wider text-gray-500">Latein</span>
-                <span class="italic">{{ currentMushroomRight.latin_name }}</span>
-              </div>
-              <div v-if="currentMushroomRight.description">
-                <span class="font-bold block text-sm uppercase tracking-wider text-gray-500 underline mb-1">Aussehen</span>
-                <p class="text-sm leading-relaxed">{{ currentMushroomRight.description }}</p>
-              </div>
+          <!-- Floating Image -->
+          <div class="float-left w-[45%] mr-4 mb-3">
+            <div class="aspect-square bg-gray-200 rounded-lg overflow-hidden border-4 border-[#e8dcc5] shadow-inner">
+              <img
+                v-if="currentMushroomRight.image"
+                :src="getImageUrl(currentMushroomRight)"
+                :alt="currentMushroomRight.name"
+                class="w-full h-full object-cover"
+              />
             </div>
           </div>
 
-          <div class="space-y-4 font-serif text-gray-700 text-sm overflow-y-auto pr-2 custom-scrollbar">
-            <div v-if="currentMushroomRight.size">
-              <span class="font-bold block underline mb-1">Grösse</span>
+          <!-- Flowing Text Content -->
+          <div class="font-serif text-gray-700 text-sm">
+            <div v-if="currentMushroomRight.latin_name" class="mb-3">
+              <span class="font-bold block text-sm uppercase tracking-wider text-gray-500">Latein</span>
+              <span class="italic">{{ currentMushroomRight.latin_name }}</span>
+            </div>
+            
+            <div v-if="currentMushroomRight.description" class="mb-3">
+              <span class="font-bold block text-sm uppercase tracking-wider text-gray-500 underline mb-1">Aussehen</span>
+              <p class="leading-relaxed">{{ currentMushroomRight.description }}</p>
+            </div>
+
+            <div v-if="currentMushroomRight.size" class="mb-3">
+              <span class="font-bold block underline mb-0.5">Grösse</span>
               <p>{{ currentMushroomRight.size }}</p>
             </div>
-            <div v-if="currentMushroomRight.location">
-              <span class="font-bold block underline mb-1">Standort</span>
+            
+            <div v-if="currentMushroomRight.location" class="mb-3">
+              <span class="font-bold block underline mb-0.5">Standort</span>
               <p>{{ currentMushroomRight.location }}</p>
             </div>
-            <div v-if="currentMushroomRight.season">
-              <span class="font-bold block underline mb-1">Erscheinungszeit</span>
+            
+            <div v-if="currentMushroomRight.season" class="mb-3">
+              <span class="font-bold block underline mb-0.5">Erscheinungszeit</span>
               <p>{{ currentMushroomRight.season }}</p>
             </div>
-            <div v-if="currentMushroomRight.edibility">
-              <span class="font-bold block underline mb-1">Speisewert</span>
+            
+            <div v-if="currentMushroomRight.edibility" class="mb-3">
+              <span class="font-bold block underline mb-0.5">Speisewert</span>
               <p :class="{'text-green-700': isEdible(currentMushroomRight), 'text-red-700': isPoisonous(currentMushroomRight)}">
                 {{ currentMushroomRight.edibility }}
               </p>
             </div>
-            <div v-if="currentMushroomRight.confusion_risk">
-              <span class="font-bold block underline mb-1">Verwechslungsgefahr</span>
+            
+            <div v-if="currentMushroomRight.confusion_risk" class="mb-3">
+              <span class="font-bold block underline mb-0.5">Verwechslungsgefahr</span>
               <p>{{ currentMushroomRight.confusion_risk }}</p>
             </div>
-            <div v-if="currentMushroomRight.tipp">
-              <span class="font-bold block underline mb-1">Tipp</span>
+            
+            <div v-if="currentMushroomRight.tipp" class="mb-3">
+              <span class="font-bold block underline mb-0.5">Tipp</span>
               <p class="italic text-gray-600">{{ currentMushroomRight.tipp }}</p>
             </div>
           </div>
