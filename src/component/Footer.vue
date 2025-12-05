@@ -3,7 +3,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
       <div class="flex justify-center items-center text-sm">
         <p class="footer-text">
-          Made by <span class="font-semibold">Julie & Nadia</span>
+          Erstellt von <span class="font-semibold">Julie & Nadia</span>
         </p>
       </div>
     </div>
@@ -16,7 +16,8 @@
 }
 
 .footer-text {
-  color: #AA0000;
+  color: #585555;
   font-weight: 300;
+  font-size: small;
 }
 </style>
