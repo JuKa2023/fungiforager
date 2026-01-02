@@ -52,14 +52,23 @@
 
         <ul class="grid grid-cols-1 md:grid-cols-2 gap-10">
           <li v-for="member in team" :key="member.name" class="relative group">
-            <!-- avatar overlapping the card -->
+            <!-- 
+              Avatar überlappt die Karte
+              - Absolute Positionierung, um es teilweise außerhalb der Karte zu platzieren
+              - group-hover:scale-110 für Zoom-Effekt beim Hover
+              - origin-bottom-left stellt sicher, dass es vom richtigen Punkt aus wächst
+             -->
             <img
               :src="member.avatar"
               :alt="member.name"
               class="absolute top-4 -left-4 w-40 md:w-50 select-none drop-shadow-2xl pointer-events-none transition-transform duration-300 ease-out group-hover:scale-110 origin-bottom-left z-10"
             />
 
-            <!-- card -->
+            <!-- 
+              Karten-Styling 
+              - group-hover:scale-105 für leichten Vergrößerungseffekt
+              - group-hover:bg-amber-200 um den Hintergrund beim Hover leicht abzudunkeln
+            -->
             <article
               class="bg-amber-200/90 text-emerald-950 rounded-s shadow-xl p-6 pl-28 md:pl-32 min-h-38 flex flex-col justify-center transition-transform duration-300 ease-out group-hover:scale-105 group-hover:bg-amber-200"
             >
@@ -90,6 +99,7 @@ type Member = {
   roles: string[]
 }
 
+// Daten, die die in der Kartenliste anzuzeigenden Teammitglieder definieren
 const team: Member[] = [
   {
     name: 'Nadia Giliberti',

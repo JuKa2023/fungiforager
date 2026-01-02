@@ -107,7 +107,9 @@ import BurgerIcon from '../assets/icons_burger.svg'
 import CloseIcon from '../assets/icons_close.svg'
 
 const handleClickOutside = (event) => {
+  // Falls das Menü geschlossen ist oder die Header-Referenz fehlt, nichts tun
   if (!mobileOpen.value || !headerRef.value) return
+  // Spezifische Logik zum Schließen des Menüs, wenn außerhalb des Headers geklickt wird
   if (!headerRef.value.contains(event.target)) {
     mobileOpen.value = false
   }
@@ -123,6 +125,7 @@ onBeforeUnmount(() => {
 </script>
 
 <style scoped>
+/* Glassmorphism-Effekt für den Header */
 .header-paper {
   background: rgba(255, 255, 255, 0.666);
   backdrop-filter: blur(12px) brightness(1.4);
@@ -130,6 +133,7 @@ onBeforeUnmount(() => {
   border-bottom: 1px solid rgba(255, 255, 255, 0.794);
 }
 
+/* Glassmorphism-Effekt für das mobile Menü */
 .mobile-menu {
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(12px) brightness(1.2);

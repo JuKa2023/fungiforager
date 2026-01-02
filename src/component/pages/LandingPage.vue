@@ -16,6 +16,13 @@
     :fadeTextOnScroll="true"
     :textFadeStrength="1.2"
   />
+  <!-- 
+    Konfiguration für HeroHeader:
+    - fullScreen: Nimmt 100vh ein
+    - sticky: Bleibt fixiert, während der Inhalt darüber scrollt
+    - enableScrollEffects: Aktiviert Skalierungs- und Opazitätsänderungen beim Scrollen
+    - scrollText/fadeTextOnScroll: Animiert den Titeltext beim Scrollen
+  -->
   <main class="parallax-main">
     <div class="relative z-10 pt-[120px] sm:pt-[180px]">
       <section class="max-w-5xl mx-auto px-4 py-10">

@@ -42,7 +42,7 @@ const fetchMushrooms = async () => {
   loading.value = true
   error.value = null
   try {
-    // Fetch all mushrooms, sorted by name
+    // Ruft alle Pilze ab, sortiert nach Namen
     const records = await pb.collection('mushrooms').getFullList<Mushroom>({
       sort: 'name',
     })
@@ -51,6 +51,7 @@ const fetchMushrooms = async () => {
     console.error('Error fetching mushrooms:', e)
     error.value = e.message || 'Unbekannter Fehler'
   } finally {
+    // Ladezustand beenden, unabhängig von Erfolg oder Misserfolg
     loading.value = false
   }
 }
