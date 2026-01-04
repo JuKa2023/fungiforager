@@ -8,8 +8,8 @@
         class="aspect-square bg-gray-200 rounded-lg overflow-hidden border-4 border-[#e8dcc5] shadow-inner"
       >
         <MushroomModelViewer
-          v-if="mushroom.mushroom_3d_model"
-          :modelPath="mushroom.mushroom_3d_model"
+          v-if="mushroom.modelPath"
+          :modelPath="mushroom.modelPath"
           :edibility="getEdibilityType(mushroom)"
           class="w-full h-full"
         />
@@ -18,10 +18,10 @@
 
     <!-- Flowing Text Content -->
     <div class="font-serif text-gray-700 text-sm">
-      <div v-if="mushroom.latin_name" class="mb-3">
+      <div v-if="mushroom.latinName" class="mb-3">
         <span class="font-architect font-bold block text-base">Latein</span>
         <p class="font-montserrat text-[8px] sm:text-[10px] leading-relaxed">
-          {{ mushroom.latin_name }}
+          {{ mushroom.latinName }}
         </p>
       </div>
 
@@ -57,15 +57,17 @@
         </p>
       </div>
 
-      <div v-if="mushroom.confusion_risk" class="mb-3">
+      <div v-if="mushroom.confusionRisk.length" class="mb-3">
         <span class="font-architect font-bold block text-base">Verwechslungsgefahr</span>
-        <p class="font-montserrat text-[8px] sm:text-[10px]">{{ mushroom.confusion_risk }}</p>
+        <p class="font-montserrat text-[8px] sm:text-[10px]">
+          {{ mushroom.confusionRisk.join(', ') }}
+        </p>
       </div>
 
-      <div v-if="mushroom.tipp" class="mb-3">
+      <div v-if="mushroom.tip" class="mb-3">
         <span class="font-architect font-bold block text-base">Tipp</span>
         <p class="font-montserrat text-[8px] sm:text-[10px] italic text-gray-600">
-          {{ mushroom.tipp }}
+          {{ mushroom.tip }}
         </p>
       </div>
     </div>
@@ -85,19 +87,13 @@ defineProps<{
   pageNumber: number
 }>()
 
-const isEdible = (mushroom: Mushroom) => {
-  const text = mushroom.edibility?.toLowerCase() || ''
-  return text.includes('essbar') || text.includes('gut') || text.includes('lecker')
-}
+const isEdible = (mushroom: Mushroom) => mushroom.edibilityStatus === 'edible'
 
-const isPoisonous = (mushroom: Mushroom) => {
-  const text = mushroom.edibility?.toLowerCase() || ''
-  return text.includes('giftig') || text.includes('tödlich') || text.includes('ungenießbar')
-}
+const isPoisonous = (mushroom: Mushroom) => mushroom.edibilityStatus === 'poisonous'
 
 const getEdibilityType = (mushroom: Mushroom) => {
-  if (isEdible(mushroom)) return 'edible'
-  if (isPoisonous(mushroom)) return 'poisonous'
+  if (mushroom.edibilityStatus === 'edible') return 'edible'
+  if (mushroom.edibilityStatus === 'poisonous') return 'poisonous'
   return 'neutral'
 }
 </script>

@@ -1,18 +1,16 @@
+export type EdibilityStatus = 'edible' | 'poisonous' | 'unknown'
+
 export interface Mushroom {
-  id: string
-  collectionId: string
-  collectionName: string
-  created: string
-  updated: string
   name: string
-  latin_name: string
+  latinName: string
   description: string
-  image: string
   size: string
   location: string
   season: string
   edibility: string
-  confusion_risk: string
-  tipp: string
-  mushroom_3d_model: string
+  edibilityStatus: EdibilityStatus
+  confusionRisk: string[]
+  tip: string | null
+  modelPath: string | null
+  updated: string
 }

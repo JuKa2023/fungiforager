@@ -42,8 +42,8 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-import { pb } from '@/lib/pocketbase'
 import type { Mushroom } from '@/types'
+import mushroomsData from '@/data/mushrooms.json'
 import MushroomBook from '@/component/lexikon/MushroomBook.vue'
 
 defineProps({
@@ -54,14 +54,13 @@ const mushrooms = ref<Mushroom[]>([])
 const loading = ref(true)
 const error = ref<string | null>(null)
 
-const fetchMushrooms = async () => {
+const fetchMushrooms = () => {
   loading.value = true
   error.value = null
   try {
-    // Ruft alle Pilze ab, sortiert nach Namen
-    const records = await pb.collection('mushrooms').getFullList<Mushroom>({
-      sort: 'name',
-    })
+    const records = [...(mushroomsData as Mushroom[])].sort((a, b) =>
+      (a.name || '').localeCompare(b.name || ''),
+    )
     mushrooms.value = records
   } catch (e: any) {
     console.error('Error fetching mushrooms:', e)

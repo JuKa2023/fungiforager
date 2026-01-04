@@ -3,7 +3,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between h-16 items-center">
         <router-link to="/">
-          <img class="text-xl font-bold" src="" alt="Logo" />
+          <img class="h-8 w-auto" src="/icon_fungi_text.svg" alt="Fungi Forager Logo" />
         </router-link>
 
         <!-- Desktop Navigation -->
