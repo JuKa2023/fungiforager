@@ -37,7 +37,7 @@
 
         <!-- Mobile Menu Button -->
         <button
-          class="md:hidden focus:outline-none p-2 rounded-full hover:bg-white/20 transition-colors"
+          class="md:hidden focus:outline-none p-2 rounded-full hover:bg-white/20 transition-colors cursor-pointer"
           @click="mobileOpen = !mobileOpen"
         >
           <img

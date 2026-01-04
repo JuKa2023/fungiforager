@@ -27,7 +27,7 @@
         <button
           @click="prevPage"
           :disabled="currentPage === 0"
-          class="absolute left-4 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-[#8b4513] text-white shadow-lg hover:bg-[#a0522d] disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+          class="absolute left-4 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-[#8b4513] text-white shadow-lg hover:bg-[#a0522d] disabled:opacity-50 disabled:cursor-not-allowed transition-all cursor-pointer"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -48,7 +48,7 @@
         <button
           @click="nextPage"
           :disabled="!hasNextPage"
-          class="absolute right-4 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-[#8b4513] text-white shadow-lg hover:bg-[#a0522d] disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+          class="absolute right-4 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-[#8b4513] text-white shadow-lg hover:bg-[#a0522d] disabled:opacity-50 disabled:cursor-not-allowed transition-all cursor-pointer"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -93,7 +93,7 @@
           <button
             @click="prevMobile"
             :disabled="currentMobileIndex === 0"
-            class="pointer-events-auto p-2 rounded-full bg-[#8b4513]/90 text-white shadow-lg hover:bg-[#a0522d] disabled:opacity-0 transition-all"
+            class="pointer-events-auto p-2 rounded-full bg-[#8b4513]/90 text-white shadow-lg hover:bg-[#a0522d] disabled:opacity-0 transition-all cursor-pointer"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -114,7 +114,7 @@
           <button
             @click="nextMobile"
             :disabled="!hasNextMobile"
-            class="pointer-events-auto p-2 rounded-full bg-[#8b4513]/90 text-white shadow-lg hover:bg-[#a0522d] disabled:opacity-0 transition-all"
+            class="pointer-events-auto p-2 rounded-full bg-[#8b4513]/90 text-white shadow-lg hover:bg-[#a0522d] disabled:opacity-0 transition-all cursor-pointer"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

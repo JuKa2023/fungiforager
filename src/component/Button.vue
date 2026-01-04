@@ -1,7 +1,7 @@
 <template>
   <button
     @click="$emit('click')"
-    :class="['rounded-xl transition-all duration-200 px-6 py-3', classes]"
+    :class="['rounded-xl transition-all duration-200 px-6 py-3 cursor-pointer', classes]"
   >
     <slot />
   </button>

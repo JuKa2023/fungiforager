@@ -18,7 +18,7 @@
         <p>Fehler beim Laden der Pilze: {{ error }}</p>
         <button
           @click="fetchMushrooms"
-          class="mt-4 px-4 py-2 bg-[#8b4513] text-white rounded hover:bg-[#a0522d]"
+          class="mt-4 px-4 py-2 bg-[#8b4513] text-white rounded hover:bg-[#a0522d] cursor-pointer"
         >
           Erneut versuchen
         </button>

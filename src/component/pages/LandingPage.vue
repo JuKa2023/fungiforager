@@ -31,8 +31,8 @@
           lernst du spielerisch über echte Pilzarten zu bestimmen.
         </p>
         <div class="flex justify-center gap-16 mt-16">
-          <Button variant="white">Über Uns</Button>
-          <Button variant="red">Zum Spiel</Button>
+          <Button variant="white" @click="router.push({ name: 'ueberuns' })">Über Uns</Button>
+          <Button variant="red" @click="router.push({ name: 'spielinformation' })">Zum Spiel</Button>
         </div>
       </section>
       <section class="max-w-5xl mx-auto px-4 py-10 mt-24">
@@ -51,10 +51,13 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 import NewsSection from '../News.vue'
 import HeroHeader from '../HeroHeader.vue'
 import Button from '../Button.vue'
 import { newsItems } from '../../data/news.ts'
 import heroImage from '../../assets/hintergrundbild/wald_von_oben.png'
+
+const router = useRouter()
 const articles = ref(newsItems)
 </script>
