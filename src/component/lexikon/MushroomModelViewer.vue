@@ -99,7 +99,7 @@ const loadModel = (path: string) => {
   }
 
   // Construct the full path to the GLB file in the public folder
-  const modelUrl = `/mushroom/${path}`
+  const modelUrl = `${import.meta.env.BASE_URL}mushroom/${path}`
 
   const loader = new GLTFLoader()
   loader.load(
