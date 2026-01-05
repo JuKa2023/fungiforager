@@ -27,7 +27,7 @@
     <div class="relative z-10 pt-[120px] sm:pt-[180px]">
       <section class="max-w-5xl mx-auto px-4 py-10">
         <p class="text-m mb-6 text-white">
-          Fungi Forager ist ein interaktives Lernspiel, das dich in eine 3D-Waldwelt entführt. Hierlernst du spielerisch echte Pilzarten, die du in der Schweiz findest, zu bestimmen.
+          Fungi Forager ist ein interaktives Lernspiel, das dich in eine 3D-Waldwelt entführt. Hier lernst du spielerisch echte Pilzarten, die du in der Schweiz findest, zu bestimmen.
         </p>
         <div class="flex justify-center gap-16 mt-16">
           <Button variant="white" @click="router.push({ name: 'ueberuns' })">Über Uns</Button>
