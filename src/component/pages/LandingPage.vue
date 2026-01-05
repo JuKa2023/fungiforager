@@ -16,7 +16,7 @@
     :fadeTextOnScroll="true"
     :textFadeStrength="1.2"
   />
-  <!-- 
+  <!--
     Konfiguration für HeroHeader:
     - fullScreen: Nimmt 100vh ein
     - sticky: Bleibt fixiert, während der Inhalt darüber scrollt
@@ -27,8 +27,7 @@
     <div class="relative z-10 pt-[120px] sm:pt-[180px]">
       <section class="max-w-5xl mx-auto px-4 py-10">
         <p class="text-m mb-6 text-white">
-          Fungi Forager ist ein interaktives Lernspiel, das dich in eine 3D-Waldwelt entführt. Hier
-          lernst du spielerisch über echte Pilzarten zu bestimmen.
+          Fungi Forager ist ein interaktives Lernspiel, das dich in eine 3D-Waldwelt entführt. Hierlernst du spielerisch echte Pilzarten, die du in der Schweiz findest, zu bestimmen.
         </p>
         <div class="flex justify-center gap-16 mt-16">
           <Button variant="white" @click="router.push({ name: 'ueberuns' })">Über Uns</Button>
@@ -38,8 +37,7 @@
       <section class="max-w-5xl mx-auto px-4 py-10 mt-24">
         <h2 class="text-3xl font-bold mb-6 text-white">Unsere Mission</h2>
         <p class="text-m mb-6 text-white">
-          Immer weniger Menschen kennen sich mit der Natur aus. Mit Fungi Forager möchten wir dieses
-          Wissen zurückbringen.
+          Immer weniger junge Menschen verbringen Zeit in der Natur, so kennen sich weniger Menschen mit der Natur aus. Mit Fungi Forager möchten wir einen Teil dessen Wissen zurückbringen.
         </p>
       </section>
       <div class="max-w-5xl mx-auto px-4 py-10 mt-24">

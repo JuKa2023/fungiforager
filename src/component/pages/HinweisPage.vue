@@ -36,9 +36,6 @@
 </template>
 
 <script setup lang="ts">
-import heroImage from '../../assets/hintergrundbild/pilzwald.png'
-import HeroHeader from '../HeroHeader.vue'
-
 type Section = {
   title: string
   body: string
@@ -54,7 +51,7 @@ const sections: Section[] = [
   {
     title: 'Unverzichtbare Expertenkontrolle',
     body:
-      'Bevor du wild wachsende Pilze sammelst oder verhst, müssen die Exemplare unbedingt ' +
+      'Bevor du wild wachsende Pilze sammelst oder verzehrst, müssen die Exemplare unbedingt ' +
       'von einem qualifizierten Pilzsachverständigen oder einer anerkannten Pilzberatungsstelle ' +
       'begutachtet und freigegeben werden.',
   },

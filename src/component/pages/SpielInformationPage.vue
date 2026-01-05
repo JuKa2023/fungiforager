@@ -28,8 +28,8 @@
       <section class="max-w-5xl mx-auto px-4 py-10 mt-24">
         <h2 class="text-3xl font-bold mb-6 text-white">Für wen ist das Spiel?</h2>
         <p class="text-m mb-6 text-white">
-          Ganz egal, ob du Gamer:in oder Naturliebhaber:in bist – hier wirst du auf spielerische
-          Weise zur Pilzexpert:in!
+          Ganz egal, ob du Gamer:in oder Naturliebhaber:in bist, hier wirst du auf spielerische
+          Weise zur Pilzkenner:in!
         </p>
       </section>
 
@@ -54,7 +54,7 @@
                 <img src="@/assets/pilz_icon.png" alt="Mushroom Icon" class="feature-icon" />
                 <div class="space-y-1">
                   <p class="feature-title">Untersuchen</p>
-                  <p class="feature-text">Betrachte sie genau: Form, Farbe, Lamellen, Geruch.</p>
+                  <p class="feature-text">Betrachte sie genau: Form, Farbe, Lamellen, Röhren.</p>
                 </div>
               </li>
 
@@ -63,6 +63,7 @@
                 <div class="space-y-1">
                   <p class="feature-title">Entscheiden</p>
                   <p class="feature-text">Ist der Pilz essbar oder giftig?</p>
+                  <p class="feature-text">Mitnehmen oder liegen lassen?</p>
                 </div>
               </li>
 
@@ -79,8 +80,7 @@
 
             <div class="mt-10 rounded-xl border p-4">
               <p class="text-sm md:text-base text-emerald-200/80 leading-relaxed">
-                Sinkt dein Energielevel auf null, fällst du in Ohnmacht und verlierst Punkte, aber
-                dein Lexikon bleibt erhalten, damit du beim nächsten Mal klüger bist.
+                Achtung ungeniessbare Pilze geben Punktabzug, sofern du sie ist.
               </p>
             </div>
           </div>

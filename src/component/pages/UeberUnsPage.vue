@@ -30,7 +30,7 @@
           Dieses Projekt entstand im Rahmen unseres Studiums als kreative Antwort auf ein reales
           Problem: viele Kinder und Jugendliche haben kaum noch Bezug zur Natur. Mit
           <span class="italic">Fungi Forager</span>
-          möchten wir das ändern – digital, interaktiv und mit Spaß am Entdecken.
+          möchten wir das ändern: digital, interaktiv und mit Spass am Entdecken.
         </p>
       </div>
 
@@ -39,12 +39,10 @@
         <h2 class="text-2xl md:text-3xl font-semibold text-white">Das Projekt in Kürze</h2>
         <p class="max-w-prose leading-relaxed text-white">
           <span class="italic">Fungi Forager</span> kombiniert moderne 3D-Technik mit Umweltbildung.
-          Unser Ziel ist es, Wissen über Pilze und Natur wieder spannend und zugänglich zu machen –
-          nicht durch Bücher, sondern durch Erleben.
+          Unser Ziel ist es, Wissen über Pilze und Natur wieder spannend und zugänglich zu machen, das nicht durch Bücher, sondern durch das Erleben in einem sicheren Raum.
         </p>
         <p class="max-w-prose leading-relaxed text-white">
-          Das Projekt wurde von uns eigenständig konzipiert, gestaltet und umgesetzt – von der Idee
-          bis zum spielbaren Prototyp.
+          Das Projekt wurde von uns eigenständig konzipiert, gestaltet und umgesetzt, von der Idee bis zum spielbaren Prototyp wurde alles selbst umgesetzt.
         </p>
       </div>
 
@@ -54,7 +52,7 @@
 
         <ul class="grid grid-cols-1 md:grid-cols-2 gap-10">
           <li v-for="member in team" :key="member.name" class="relative group">
-            <!-- 
+            <!--
               Avatar überlappt die Karte
               - Absolute Positionierung, um es teilweise außerhalb der Karte zu platzieren
               - group-hover:scale-110 für Zoom-Effekt beim Hover
@@ -66,8 +64,8 @@
               class="absolute top-4 -left-4 w-40 md:w-50 select-none drop-shadow-2xl pointer-events-none transition-transform duration-300 ease-out group-hover:scale-110 origin-bottom-left z-10"
             />
 
-            <!-- 
-              Karten-Styling 
+            <!--
+              Karten-Styling
               - group-hover:scale-105 für leichten Vergrößerungseffekt
               - group-hover:bg-amber-200 um den Hintergrund beim Hover leicht abzudunkeln
             -->
