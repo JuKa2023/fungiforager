@@ -21,8 +21,8 @@
       <section class="max-w-5xl mx-auto px-4 py-10">
         <p class="text-m mb-6 text-white">
           In Fungi Forager erkundest du eine 3D-Waldwelt, inspiriert von echten Schweizer
-          Landschaften. Dein Ziel, Pilze finden, bestimmen und im Lexikon festhalten. Aber Vorsicht,
-          nicht alle sind essbar!
+          Pilzen und Landschaften. Dein Ziel ist es Pilze zu finden, zu bestimmen und zu sammeln. Aber Vorsicht,
+          nicht alle Pilze sind essbar!
         </p>
       </section>
       <section class="max-w-5xl mx-auto px-4 py-10 mt-24">
@@ -80,7 +80,7 @@
 
             <div class="mt-10 rounded-xl border p-4">
               <p class="text-sm md:text-base text-emerald-200/80 leading-relaxed">
-                Achtung ungeniessbare Pilze geben Punktabzug, sofern du sie ist.
+                Achtung ungeniessbare Pilze geben Punktabzug, sofern du sie isst.
               </p>
             </div>
           </div>
@@ -101,14 +101,14 @@
           <div
             class="bg-[#b9975b] bg-opacity-80 rounded-s shadow-lg border border-white/10 p-4 flex flex-col items-center text-center"
           >
-            <p class="font-semibold mb-4">Gameplay umgesetzt mit Unity Engine</p>
+            <p class="font-semibold mb-4">Gameplay umgesetzt mit Unity</p>
             <img src="../../assets/3d_icons_unity.png" alt="Unity Controller" class="w-24 h-24" />
           </div>
 
           <div
             class="bg-[#b9975b] bg-opacity-80 rounded-s shadow-lg border border-white/10 p-4 flex flex-col items-center text-center"
           >
-            <p class="font-semibold mb-4">Pilzdaten basieren auf echten Schweizer Arten</p>
+            <p class="font-semibold mb-4">Daten basieren auf echten Schweizer Pilzen</p>
             <img src="../../assets/3d_icons_arten.png" alt="Mushroom Database" class="w-24 h-24" />
           </div>
         </div>

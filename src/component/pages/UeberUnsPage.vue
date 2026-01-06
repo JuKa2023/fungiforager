@@ -38,7 +38,7 @@
       <div class="space-y-4">
         <h2 class="text-2xl md:text-3xl font-semibold text-white">Das Projekt in Kürze</h2>
         <p class="max-w-prose leading-relaxed text-white">
-          <span class="italic">Fungi Forager</span> kombiniert moderne 3D-Technik mit Umweltbildung.
+          <span class="italic">Fungi Forager</span> kombiniert 3D-Technik mit Umweltbildung.
           Unser Ziel ist es, Wissen über Pilze und Natur wieder spannend und zugänglich zu machen, das nicht durch Bücher, sondern durch das Erleben in einem sicheren Raum.
         </p>
         <p class="max-w-prose leading-relaxed text-white">
