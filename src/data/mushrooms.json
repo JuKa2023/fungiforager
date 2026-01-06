@@ -2,7 +2,7 @@
   {
     "name": "Fliegenpilz",
     "latinName": "Amanita muscaria",
-    "description": "Leuchtend roter Hut mit weissen Punkten – das klassische „Märchenpilz“-Aussehen. Der Stiel ist weiss, fest und trägt oft einen hängenden Ring. Unten sitzt eine Knolle mit mehreren Ringen. Das Fleisch ist weiss und geruchlos.",
+    "description": "Leuchtend roter Hut mit weissen Punkten. Der Stiel ist weiss, fest und trägt oft einen hängenden Ring. Unten sitzt eine Knolle mit mehreren Ringen. Das Fleisch ist weiss und geruchlos.",
     "size": "Hut bis 20 cm, Stiel bis 15 cm hoch.",
     "location": "In Misch- und Nadelwäldern, häufig unter Birken und Fichten.",
     "season": "Juli bis November, oft nach Regenperioden.",
@@ -16,13 +16,13 @@
   {
     "name": "Pantherpilz",
     "latinName": "Amanita pantherina",
-    "description": "Der Pantherpilz hat einen braunen bis olivbraunen Hut mit weissen Punkten, ähnlich wie der Fliegenpilz, aber dunkler gefärbt. Der Hutrand ist glatt, der Stiel weiss und trägt einen hängenden Ring. Unten hat er eine deutlich abgesetzte Knolle mit mehreren ringförmigen Wülsten. Das Fleisch ist weiss und geruchlos.",
+    "description": "Hat einen braunen bis olivbraunen Hut mit weissen Punkten, ähnlich wie der Fliegenpilz, aber dunkler gefärbt. Der Hutrand ist glatt, der Stiel weiss und trägt einen hängenden Ring. Unten hat er eine deutlich abgesetzte Knolle mit mehreren ringförmigen Wülsten. Das Fleisch ist weiss und geruchlos.",
     "size": "Hut 5 bis 12 cm, Stiel bis 15 cm hoch.",
     "location": "Wächst in Laub- und Mischwäldern, besonders unter Buchen und Fichten, auf kalkhaltigen Böden.",
     "season": "Juli bis Oktober",
     "edibility": "Giftig – enthält Nervengifte, die Halluzinationen, Schwindel, Krämpfe und Verwirrtheit auslösen können.",
     "edibilityStatus": "poisonous",
-    "confusionRisk": ["Kaiserling (Amanita caesarea): leuchtend orange, gelblicher Stiel"],
+    "confusionRisk": ["Kaiserling (Amanita caesarea)"],
     "tip": null,
     "modelPath": "amavita.glb",
     "updated": "2025-12-07 10:58:33.752Z"
@@ -30,9 +30,9 @@
   {
     "name": "Pfifferling",
     "latinName": "Cantharellus cibarius",
-    "description": "Der Pfifferling leuchtet dottergelb bis goldgelb und hat einen trichterförmigen Hut mit unregelmässig gewelltem Rand. Auf der Unterseite sitzen Leisten statt Lamellen – sie verlaufen am Stiel herab. Das Fleisch ist fest, weisslich und riecht angenehm fruchtig, leicht nach Aprikose",
+    "description": "Leuchtet dotter- bis goldgelb und hat einen trichterförmigen Hut mit unregelmässig gewelltem Rand. Auf der Unterseite sitzen Leisten, die verlaufen am Stiel herab. Das Fleisch ist fest, weisslich und riecht angenehm fruchtig, leicht nach Aprikose",
     "size": "Hut bis 10 cm, Stiel kurz und fest.",
-    "location": "Wächst in lichten Mischwäldern, besonders unter Fichten, Buchen und Kiefern. Bevorzugt moosige, saure Böden.",
+    "location": "Wächst in Mischwäldern, unter Fichten, Buchen und Kiefern. Bevorzugt moosige, saure Böden.",
     "season": "Juni bis Oktober",
     "edibility": "Essbar - aromatisch, würzig, fest im Biss",
     "edibilityStatus": "edible",
@@ -44,13 +44,13 @@
   {
     "name": "Falscher Pfifferling",
     "latinName": "Hygrophoropsis aurantiaca",
-    "description": "Der Falsche Pfifferling ist orangegelb, dünnfleischig und hat echte Lamellen, keine Leisten. Sein Hut ist meist weicher und gleichmässig rund. Das Fleisch ist blassgelb und riecht kaum.",
+    "description": "Hat eine orangegelb Farbe, dünnfleischig und hat echte Lamellen. Sein Hut ist meist weicher und gleichmässig rund. Das Fleisch ist blassgelb und riecht kaum.",
     "size": "Hut 3 bis 7 cm, Stiel dünn und biegsam.",
-    "location": "Wächst in Nadelwäldern, oft auf verrottetem Holz oder Nadelstreu.",
+    "location": "Wächst in Nadelwäldern, auf verrottetem Holz oder Nadelstreu.",
     "season": "Juli bis November",
     "edibility": "Ungeniessbar bis schwach giftig - verursacht bei empfindlichen Personen Magenbeschwerden",
     "edibilityStatus": "poisonous",
-    "confusionRisk": ["Mit echtem Pfifferling (Cantharellus cibarius)"],
+    "confusionRisk": ["Pfifferling (Cantharellus cibarius)"],
     "tip": null,
     "modelPath": "falscher_pfifferling.glb",
     "updated": "2025-12-07 10:52:22.829Z"
@@ -59,13 +59,13 @@
   {
     "name": "Flaschenstäubling ",
     "latinName": "Lycoperdon perlatum",
-    "description": "Der Flaschenstäubling ist weiss bis cremefarben und flaschenförmig. Seine Oberfläche ist mit feinen, körnigen Stacheln bedeckt. Jung ist das Innere weiss und fest, später wird es olivbraun und staubig,reif und nicht mehr essbar.",
+    "description": "Ist weiss bis cremefarben und flaschenförmig. Seine Oberfläche ist mit feinen, körnigen Stacheln bedeckt. Jung ist das Innere weiss und fest, später wird es olivbraun und staubig und ist nicht mehr essbar.",
     "size": "Bis zu 8 cm hoch, 5 cm breit",
     "location": "Wächst in Mischwäldern, auf Wiesen und Wegrändern.",
     "season": "Frühsommer bis Spätherbst",
-    "edibility": "essbar - solange jung und innen weiss!",
+    "edibility": "Essbar - solange jung und innen weiss!",
     "edibilityStatus": "edible",
-    "confusionRisk": ["Mit giftigem Kartoffelbovist (Scleroderma citrinum)"],
+    "confusionRisk": ["Kartoffelbovist (Scleroderma citrinum)"],
     "tip": null,
     "modelPath": "flaschenstaeubling.glb",
     "updated": "2025-12-07 10:52:22.829Z"
@@ -74,15 +74,13 @@
   {
     "name": "Kartoffelbovist",
     "latinName": "Scleroderma citrinum",
-    "description": "Knollenförmig, mit gelblich-brauner bis ockerfarbener Schale, die sich rissig zeigen kann. Das Innere ist jung hell, verfärbt sich aber bald violett bis schwarz und wird hart. Der Geruch ist unangenehm.",
+    "description": "Knollenförmig, mit gelblich-brauner bis ockerfarbener Schale, die rissig haben kann. Das Innere ist jung hell, verfärbt sich zunehmend violett bis schwarz und wird hart. Unangenehmer Geruch.",
     "size": "3 bis 8 cm Durchmesser",
     "location": "Wälder, Parks, Gärten, oft auf sauren Böden",
     "season": "Sommer bis Herbst",
     "edibility": "Giftig – verursacht Magen-Darm-Beschwerden.",
     "edibilityStatus": "poisonous",
-    "confusionRisk": [
-      "Mit essbaren Stäublingen im jungen Zustand, wenn das Innere noch weiss ist."
-    ],
+    "confusionRisk": ["essbare Stäublinge"],
     "tip": null,
     "modelPath": "bowist.glb",
     "updated": "2025-12-07 10:52:22.829Z"
@@ -91,15 +89,13 @@
   {
     "name": "Wiesen-Champignon",
     "latinName": "Agaricus campestris",
-    "description": "Ein klassischer weisser Pilz mit dichtem, rundem Hut und rosa bis braunen Lamellen auf der Unterseite. Der Stiel ist kurz und weiss, mit einem kleinen Ring unterhalb des Hutes. Das Fleisch rötet leicht bei Druck und riecht angenehm pilzartig.",
+    "description": "Ein klassischer weisser Pilz mit dichtem, rundem Hut und rosa bis braunen Lamellen auf der Unterseite. Hat einen Kurzen, weissen Stiel mit einem kleinen Ring unterhalb des Hutes. Das Fleisch rötet leicht bei Druck und riecht angenehm.",
     "size": "Hut 5 bis 10 cm, Stiel bis 8 cm",
     "location": "Auf Wiesen, Weiden und Grasflächen, meist in Gruppen",
     "season": "Mai bis Oktober",
     "edibility": "Essbar – aromatisch und vielseitig verwendbar.",
     "edibilityStatus": "edible",
-    "confusionRisk": [
-      "Mit giftigem Karbol-Champignon (Agaricus xanthodermus) und Knollenblätterpilzen"
-    ],
+    "confusionRisk": ["giftigem Karbol-Champignon (Agaricus xanthodermus)", "Knollenblätterpilzen"],
     "tip": "Echter Wiesen-Champignon riecht angenehm pilzig, Karbol-Champignon nach Tinte oder Phenol.",
     "modelPath": "champignon.glb",
     "updated": "2025-12-07 10:52:22.829Z"
@@ -108,13 +104,13 @@
   {
     "name": "Karbol-Champignon",
     "latinName": "Agaricus xanthodermus",
-    "description": "Der Karbol-Champignon sieht dem Wiesen-Champignon sehr ähnlich, hat aber einige deutliche Merkmale: Der weisse Hut gilbt bei Druck, besonders am Rand oder an der Stielbasis. Der Geruch ist unangenehm, riecht nach Tinte oder Karbol. Die Lamellen sind jung grau-rosa, später braun.",
+    "description": "Sieht dem Wiesen-Champignon sehr ähnlich, hat aber einige deutliche Merkmale: Der weisse Hut gilbt bei Druck, besonders am Rand oder an der Stielbasis. Der Geruch ist unangenehm, riecht nach Tinte oder Karbol. Die Lamellen sind jung grau-rosa, später braun.",
     "size": "Hut 5 bis 12 cm",
     "location": "In Parks, Gärten und auf Wiesen, oft in der Nähe von Menschen.",
     "season": "Mai bis Oktober",
     "edibility": "Giftig – verursacht heftige Magen-Darm-Beschwerden.",
     "edibilityStatus": "poisonous",
-    "confusionRisk": ["Mit essbarem Wiesen-Champignon (Agaricus campestris)"],
+    "confusionRisk": ["Wiesen-Champignon (Agaricus campestris)"],
     "tip": null,
     "modelPath": "karbol_champignon.glb",
     "updated": "2025-12-07 10:52:22.829Z"
@@ -123,13 +119,13 @@
   {
     "name": "Maronenröhrling",
     "latinName": "Imleria badia",
-    "description": "Der Maronenröhrling hat einen kastanienbraunen, samtigen Hut und gelbliche bis olivgrüne Röhren, die bei Druck blau anlaufen. Der Stiel ist braun, unten heller und fest. Das Fleisch ist weisslich und mild im Geschmack.",
+    "description": "Hat einen kastanienbraunen, samtigen Hut und gelbliche bis olivgrüne Röhren, die bei Druck blau anlaufen. Der Stiel ist braun, unten heller und fest. Das Fleisch ist weisslich und mild im Geschmack.",
     "size": "Hut 5 bis 12 cm, Höhe bis 12 cm",
-    "location": "V.a. bei Fichten in Nadelmischwäldern, saure Böden",
+    "location": "bei Fichten in Nadelmischwäldern, saure Böden",
     "season": "Juli bis November",
     "edibility": "Essbar – beliebt wegen seines nussigen Aromas und kompakten Fleisches.",
     "edibilityStatus": "edible",
-    "confusionRisk": ["Mit ungeniessbarem Gallenröhrling (Tylopilus felleus, bitter)"],
+    "confusionRisk": ["Gallenröhrling (Tylopilus felleus)"],
     "tip": "Ein kleines Stück roh probieren schmeckt dieser bitter = Gallenröhrling, mild = Marone",
     "modelPath": "marronenroehrling.glb",
     "updated": "2025-12-07 10:56:47.916Z"
@@ -138,13 +134,13 @@
   {
     "name": "Gallenröhrling",
     "latinName": "Tylopilus felleus",
-    "description": "Der Gallenröhrling hat einen hell- bis ockerbraunen Hut und weissliche bis rosa Röhren, die bei älteren Exemplaren leicht bräunlich werden. Auffällig ist das dunkle Netzmuster am Stiel. Das Fleisch ist fest, aber sehr bitter.",
+    "description": "Hat einen hell- bis ockerbraunen Hut und weissliche bis rosa Röhren, die bei älteren Exemplaren leicht bräunlich werden. Auffällig ist das dunkle Netzmuster am Stiel. Das Fleisch ist fest und sehr bitter.",
     "size": "Hut 5 bis 15 cm Durchmesser, Stiel kräftig und voll.",
     "location": "Nadel- und Laubwälder, besonders auf sauren Böden",
     "season": "Sommer bis Herbst",
     "edibility": "weder noch – aber ungeniessbar, durch extrem bitteren",
     "edibilityStatus": "poisonous",
-    "confusionRisk": ["Mit essbaren Steinpilzen oder Maronenröhrlingen)"],
+    "confusionRisk": ["Steinpilzen", "Maronenröhrlingen"],
     "tip": null,
     "modelPath": "gallenroehrling.glb",
     "updated": "2025-12-07 10:56:47.916Z"
@@ -153,7 +149,7 @@
   {
     "name": "Satansröhrling",
     "latinName": "Rubroboletus satanas",
-    "description": "Dieser auffällige Pilz hat einen sehr hellen, fast weissen bis grauen Hut, darunter gelbe Röhren und einen kräftig roten Stiel. Bei Druck verfärbt sich das Fleisch blau. Der Geruch ist unangenehm, manchmal aasartig.",
+    "description": "Hat einen sehr hellen, fast weissen bis grauen Hut, darunter gelbe Röhren und einen kräftig roten Stiel. Bei Druck verfärbt sich das Fleisch blau. Der Geruch ist unangenehm, manchmal aasartig.",
     "size": "Hut bis 25 cm, kräftiger Stiel.",
     "location": "In Laubwäldern, besonders unter Eichen, Buchen und Linden, bevorzugt kalkreiche Böden.",
     "season": "Juni bis September",
@@ -167,13 +163,13 @@
   {
     "name": "Steinpilz",
     "latinName": "Boletus edulis",
-    "description": "Der Steinpilz ist einer der beliebtesten Speisepilze. Er hat einen dickfleischigen, braunen Hut mit leicht glänzender Oberfläche („speckig“) und einen kräftigen, weissen bis hellbraunen Stiel mit feinem, hellen Netzmuster. Die Röhren unter dem Hut sind jung weiss, später gelblich bis olivgrün. Das Fleisch ist fest, weiss und nussig duftend.",
+    "description": "Einer der beliebtesten Speisepilze. Hat einen dickfleischigen, braunen Hut mit leicht glänzender Oberfläche („speckig“) und einen kräftigen, weissen bis hellbraunen Stiel mit feinem, hellen Netzmuster. Die Röhren unter dem Hut sind jung weiss, später gelblich bis olivgrün. Das Fleisch ist fest, weiss und nussig duftend.",
     "size": "Hut bis 25 cm, Stiel bis 20 cm hoch.",
-    "location": "In Mischwäldern, vor allem bei Fichten, Tannen und Buchen. Bevorzugt moosige, humusreiche Böden.",
+    "location": "In Mischwäldern, bei Fichten, Tannen und Buchen. Bevorzugt moosige, humusreiche Böden.",
     "season": "Von Juni bis Spätherbst, oft nach Regen.",
     "edibility": "Essbar – aromatisch, nussig und vielseitig verwendbar. Ideal zum Braten, Trocknen oder Einlegen.",
     "edibilityStatus": "edible",
-    "confusionRisk": ["Satansröhrling (Rubroboletus satanas) – roter Stiel, gelbe Röhren"],
+    "confusionRisk": ["Satansröhrling (Rubroboletus satanas)"],
     "tip": null,
     "modelPath": "steinpilz.glb",
     "updated": "2025-12-07 10:57:43.031Z"
