@@ -113,11 +113,25 @@
           </div>
         </div>
       </section>
+
+      <section class="max-w-5xl mx-auto px-4 py-10 text-emerald-50">
+        <div class="rounded-xl border border-white/10 bg-white/5 shadow-xl backdrop-blur-sm p-8">
+          <h2 class="text-3xl font-semibold mb-4">Bereit fürs Abenteuer?</h2>
+          <p class="text-m mb-6 text-emerald-100">
+            Starte das Web-Game direkt im Browser und tauche in den Wald ein.
+          </p>
+          <Button variant="red" @click="router.push({ name: 'game' })">Jetzt spielen</Button>
+        </div>
+      </section>
     </div>
   </main>
 </template>
 
 <script setup lang="ts">
+import { useRouter } from 'vue-router'
+import Button from '../Button.vue'
 import HeroHeader from '../HeroHeader.vue'
 import heroImage from '../../assets/hintergrundbild/pilzwald.png'
+
+const router = useRouter()
 </script>

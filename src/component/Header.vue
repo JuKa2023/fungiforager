@@ -27,6 +27,10 @@
             >Spielinformation</router-link
           >
 
+          <router-link to="/game" class="nav-link" :class="{ hidden: $route.name === 'game' }"
+            >Spiel</router-link
+          >
+
           <router-link
             to="/ueberuns"
             class="nav-link"
@@ -84,6 +88,14 @@
         :class="{ hidden: $route.name === 'spielinformation' }"
         @click="mobileOpen = false"
         >Spielinformation</router-link
+      >
+
+      <router-link
+        to="/game"
+        class="nav-link block py-2"
+        :class="{ hidden: $route.name === 'game' }"
+        @click="mobileOpen = false"
+        >Spiel</router-link
       >
 
       <router-link
