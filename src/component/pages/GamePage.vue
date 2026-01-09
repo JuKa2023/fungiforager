@@ -24,16 +24,28 @@
           Schlüpfe in die Rolle einer Pilzforscher:in, streife durch den Wald und entdecke neue Arten. Am
           besten spielst du am Desktop mit Kopfhörern und einem großen Bildschirm.
         </p>
-        <div class="flex flex-wrap gap-6 mt-8">
-          <Button variant="red" @click="scrollToGame">Spiel starten</Button>
-          <Button variant="white" @click="openInNewTab">Im neuen Tab öffnen</Button>
+        <!-- Desktop Actions -->
+        <div class="hidden lg:block">
+          <div class="flex flex-wrap gap-6 mt-8">
+            <Button variant="red" @click="scrollToGame">Spiel starten</Button>
+            <Button variant="white" @click="openInNewTab">Im neuen Tab öffnen</Button>
+          </div>
+          <p class="mt-4 text-sm text-emerald-200/80">
+            Tipp: In der Vollbildansicht läuft das Spiel am flüssigsten.
+          </p>
         </div>
-        <p class="mt-4 text-sm text-emerald-200/80">
-          Tipp: In der Vollbildansicht läuft das Spiel am flüssigsten.
-        </p>
+
+        <!-- Mobile Notice -->
+        <div class="lg:hidden mt-8 p-6 bg-white/10 rounded-xl border border-white/20 backdrop-blur-sm">
+          <h3 class="text-xl font-bold text-emerald-300 mb-2">Nur am Laptop spielbar</h3>
+          <p class="text-white text-lg leading-relaxed">
+            Das Spiel kann nur auf einem Laptop oder Desktop-PC gespielt werden. Bitte besuche diese
+            Seite auf einem Laptop, um das Spiel auszuprobieren.
+          </p>
+        </div>
       </section>
 
-      <section ref="gameSectionRef" class="max-w-6xl mx-auto px-4 pb-16">
+      <section ref="gameSectionRef" class="max-w-6xl mx-auto px-4 pb-16 hidden lg:block">
         <div class="game-shell">
           <iframe
             class="game-frame"
@@ -71,7 +83,7 @@ const openInNewTab = () => {
 .game-shell {
   position: relative;
   width: 100%;
-  padding-top: 56.25%;
+  padding-top: 66.5%;
   border-radius: 24px;
   overflow: hidden;
   background: rgba(0, 0, 0, 0.65);
